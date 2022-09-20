@@ -390,7 +390,7 @@ GameObject:
   - component: {fileID: 414134016}
   - component: {fileID: 414134015}
   m_Layer: 0
-  m_Name: PacMan Tilemap
+  m_Name: PacMan Tilemap BR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -469,16 +469,6 @@ Tilemap:
   m_GameObject: {fileID: 414134013}
   m_Enabled: 1
   m_Tiles:
-  - first: {x: -10, y: -1, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 5
-      m_TileSpriteIndex: 5
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: -5, y: -1, z: 0}
     second:
       serializedVersion: 2
@@ -2011,7 +2001,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 3ce0a53b3a1c5294288622c4192a0955, type: 2}
   - m_RefCount: 22
     m_Data: {fileID: 11400000, guid: bb5f04bbe85ab4446b13ede24bc970ed, type: 2}
-  - m_RefCount: 52
+  - m_RefCount: 51
     m_Data: {fileID: 11400000, guid: c3dcb62ca0792924885af8e90b44d678, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 5
@@ -2024,10 +2014,10 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 9b96f6fbecec4f24e91d3449fe01ef17, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: d0628fe6c8526244c826fae7ab5015ae, type: 3}
-  - m_RefCount: 52
+  - m_RefCount: 51
     m_Data: {fileID: -2096951710, guid: 08305b4702eb49d4488b96a3a716feb6, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 94
+  - m_RefCount: 93
     m_Data:
       e00: 1
       e01: 0
@@ -2136,7 +2126,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 153
+  - m_RefCount: 152
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 0
     m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
@@ -2176,7 +2166,7 @@ GameObject:
   - component: {fileID: 429150737}
   - component: {fileID: 429150736}
   m_Layer: 0
-  m_Name: PacMan Tilemap
+  m_Name: PacMan Tilemap TR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3987,7 +3977,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 435146537}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 0, z: 0}
+  m_LocalPosition: {x: 4, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4091,7 +4081,7 @@ GameObject:
   - component: {fileID: 529507063}
   - component: {fileID: 529507062}
   m_Layer: 0
-  m_Name: PacMan Tilemap
+  m_Name: PacMan Tilemap BL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6682,7 +6672,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2016232240}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6702,7 +6692,7 @@ GameObject:
   - component: {fileID: 2019108413}
   - component: {fileID: 2019108412}
   m_Layer: 0
-  m_Name: PacMan Tilemap
+  m_Name: PacMan Tilemap TL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6781,16 +6771,6 @@ Tilemap:
   m_GameObject: {fileID: 2019108410}
   m_Enabled: 1
   m_Tiles:
-  - first: {x: -10, y: -1, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 5
-      m_TileSpriteIndex: 5
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: -5, y: -1, z: 0}
     second:
       serializedVersion: 2
@@ -8323,7 +8303,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 3ce0a53b3a1c5294288622c4192a0955, type: 2}
   - m_RefCount: 22
     m_Data: {fileID: 11400000, guid: bb5f04bbe85ab4446b13ede24bc970ed, type: 2}
-  - m_RefCount: 52
+  - m_RefCount: 51
     m_Data: {fileID: 11400000, guid: c3dcb62ca0792924885af8e90b44d678, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 5
@@ -8336,10 +8316,10 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 9b96f6fbecec4f24e91d3449fe01ef17, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: d0628fe6c8526244c826fae7ab5015ae, type: 3}
-  - m_RefCount: 52
+  - m_RefCount: 51
     m_Data: {fileID: -2096951710, guid: 08305b4702eb49d4488b96a3a716feb6, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 94
+  - m_RefCount: 93
     m_Data:
       e00: 1
       e01: 0
@@ -8448,7 +8428,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 153
+  - m_RefCount: 152
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 0
     m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
