@@ -6,6 +6,7 @@ public class AudioScript : MonoBehaviour
 {
     public AudioClip introMusic;
     public AudioClip normalMusic;
+    public AudioClip walkingSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,5 +22,14 @@ public class AudioScript : MonoBehaviour
         GetComponent<AudioSource>().Play();
         GetComponent<AudioSource>().loop = true;
     }
+
+    public void playWalkingSound()
+    {
+        GetComponent<AudioSource>().clip = walkingSound;
+        GetComponent<AudioSource>().Play();
+        GetComponent<AudioSource>().loop = true;
+    }
+
+
 
 }
