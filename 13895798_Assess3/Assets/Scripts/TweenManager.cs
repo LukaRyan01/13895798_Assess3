@@ -38,33 +38,34 @@ public class TweenManager : MonoBehaviour
     {
         while (true)
         {
-            // add left animation and sound 
-            tweener.AddTween(player.transform, player.transform.position, posTL, movementDuration);
+            // add bottom right animation and sound
+            tweener.AddTween(player.transform, player.transform.position, posBR, movementDuration);
             movementAudio.Play();
             yield return new WaitForSeconds(waitTIme);
             movementAudio.Stop();
-            // add down animation and sound 
-            animatorController.SetTrigger("DownParam");
+            // add bottom left animation and sound 
+            animatorController.SetTrigger("LeftParam");
             tweener.AddTween(player.transform, player.transform.position, posBL, movementDuration);
             movementAudio.Play();
             yield return new WaitForSeconds(waitTIme);
             movementAudio.Stop();
 
-            // add right animation and sound 
-            animatorController.SetTrigger("RightParam");
-            tweener.AddTween(player.transform, player.transform.position, posBR, movementDuration);
+            // add top left animation and sound 
+            animatorController.SetTrigger("UpParam");
+            tweener.AddTween(player.transform, player.transform.position, posTL, movementDuration);
             movementAudio.Play();
             yield return new WaitForSeconds(waitTIme);
             movementAudio.Stop();
 
-            // add up animation and sound 
-            animatorController.SetTrigger("UpParam");
+            // add top right animation and sound 
+            animatorController.SetTrigger("RightParam");
             tweener.AddTween(player.transform, player.transform.position, posTR, movementDuration);
             movementAudio.Play();
             yield return new WaitForSeconds(waitTIme);
             movementAudio.Stop();
 
-            animatorController.SetTrigger("LeftParam");
+            // set sprite position to down
+            animatorController.SetTrigger("DownParam");
 
         }
     }
