@@ -15,12 +15,15 @@ public class AudioScript : MonoBehaviour
     // Play intro music until complete then loop normal music
     IEnumerator playIntroMusic()
     {
-        GetComponent<AudioSource>().clip = introMusic;
+        /*
+         * GetComponent<AudioSource>().clip = introMusic;
         GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(introMusic.length);
+        */
         GetComponent<AudioSource>().clip = normalMusic;
         GetComponent<AudioSource>().Play();
         GetComponent<AudioSource>().loop = true;
+        yield return new WaitForSeconds(1);
     }
 
     public void playWalkingSound()
