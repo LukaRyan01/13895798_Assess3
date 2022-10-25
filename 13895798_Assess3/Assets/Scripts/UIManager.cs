@@ -19,8 +19,14 @@ public class UIManager : MonoBehaviour
 
     public void LoadFirstLevel()
     {
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
         SceneManager.LoadScene(0);
         //SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    public void LoadStartScreen()
+    {
+        //DontDestroyOnLoad(this);
+        SceneManager.LoadScene(1);
     }
 }
