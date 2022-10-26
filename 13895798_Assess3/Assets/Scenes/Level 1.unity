@@ -1828,6 +1828,7 @@ MonoBehaviour:
   lastInput: 0
   kirby: {fileID: 1968977117}
   TileMap: {fileID: 2019108413}
+  AnimationController: {fileID: 1968977118}
 --- !u!1 &1213576395
 GameObject:
   m_ObjectHideFlags: 0
