@@ -18,7 +18,7 @@ public class Tweener : MonoBehaviour
     {
         for (int i = 0; i < activeTweens.Count; i++)
         {
-            if (Vector3.Distance(activeTweens[i].Target.position, activeTweens[i].EndPos) > 0.1f)
+            if (Vector3.Distance(activeTweens[i].Target.position, activeTweens[i].EndPos) > 0.00001f)
             {
                 float LinearFraction =((Time.time - activeTweens[i].StartTime) / activeTweens[i].Duration);
 

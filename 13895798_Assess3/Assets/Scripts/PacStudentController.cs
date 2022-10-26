@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class PacStudentController : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class PacStudentController : MonoBehaviour
     [SerializeField]
     private GameObject kirby;
     private Tweener tweener;
+    private Vector3 KirbyNewPos;
+    public Tilemap TileMap;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,19 +41,52 @@ public class PacStudentController : MonoBehaviour
         {
             if (lastInput == KeyCode.W)
             {
-                tweener.AddTween(kirby.transform, kirby.transform.position, (kirby.transform.position + new Vector3(0.0f, 1.0f, 0.0f)), 1.0f);
+                KirbyNewPos = kirby.transform.position + new Vector3(0.0f, 1.0f, 0.0f);
+                if (TileMap.GetTile(Vector3Int.FloorToInt(KirbyNewPos + new Vector3(-4.5f, -1.5f, 0.0f))) == null)
+                {
+                    tweener.AddTween(kirby.transform, kirby.transform.position, KirbyNewPos, 1.0f);
+                }
+                else if (TileMap.GetTile(Vector3Int.FloorToInt(KirbyNewPos + new Vector3(-4.5f, -1.5f, 0.0f))).name == "Normal Pellet Simple Tile")
+                {
+                    tweener.AddTween(kirby.transform, kirby.transform.position, KirbyNewPos, 1.0f);
+                }
             }
             if (lastInput == KeyCode.A)
             {
-                tweener.AddTween(kirby.transform, kirby.transform.position, (kirby.transform.position + new Vector3(-1.0f, 0.0f, 0.0f)), 1.0f);
+                KirbyNewPos = kirby.transform.position + new Vector3(-1.0f, 0.0f, 0.0f);
+                if (TileMap.GetTile(Vector3Int.FloorToInt(KirbyNewPos + new Vector3(-4.5f, -1.5f, 0.0f))) == null)
+                {
+                    tweener.AddTween(kirby.transform, kirby.transform.position, KirbyNewPos, 1.0f);
+                }
+                else if (TileMap.GetTile(Vector3Int.FloorToInt(KirbyNewPos + new Vector3(-4.5f, -1.5f, 0.0f))).name == "Normal Pellet Simple Tile" )
+                {
+                    tweener.AddTween(kirby.transform, kirby.transform.position, (kirby.transform.position + new Vector3(-1.0f, 0.0f, 0.0f)), 1.0f);
+               }
             }
             if (lastInput == KeyCode.S)
             {
-                tweener.AddTween(kirby.transform, kirby.transform.position, (kirby.transform.position + new Vector3(0.0f, -1.0f, 0.0f)), 1.0f);
+
+                KirbyNewPos = kirby.transform.position + new Vector3(0.0f, -1.0f, 0.0f);
+                if (TileMap.GetTile(Vector3Int.FloorToInt(KirbyNewPos + new Vector3(-4.5f, -1.5f, 0.0f))) == null)
+                {
+                    tweener.AddTween(kirby.transform, kirby.transform.position, KirbyNewPos, 1.0f);
+                }
+                else if (TileMap.GetTile(Vector3Int.FloorToInt(KirbyNewPos + new Vector3(-4.5f, -1.5f, 0.0f))).name == "Normal Pellet Simple Tile")
+                {
+                    tweener.AddTween(kirby.transform, kirby.transform.position, (kirby.transform.position + new Vector3(0.0f, -1.0f, 0.0f)), 1.0f);
+                }
             }
             if (lastInput == KeyCode.D)
             {
-                tweener.AddTween(kirby.transform, kirby.transform.position, (kirby.transform.position + new Vector3(1.0f, 0.0f, 0.0f)), 1.0f);
+                KirbyNewPos = kirby.transform.position + new Vector3(1.0f, 0.0f, 0.0f);
+                if (TileMap.GetTile(Vector3Int.FloorToInt(KirbyNewPos + new Vector3(-4.5f, -1.5f, 0.0f))) == null)
+                {
+                    tweener.AddTween(kirby.transform, kirby.transform.position, KirbyNewPos, 1.0f);
+                }
+                else if (TileMap.GetTile(Vector3Int.FloorToInt(KirbyNewPos + new Vector3(-4.5f, -1.5f, 0.0f))).name == "Normal Pellet Simple Tile")
+                {
+                    tweener.AddTween(kirby.transform, kirby.transform.position, (kirby.transform.position + new Vector3(1.0f, 0.0f, 0.0f)), 1.0f);
+                }
             }
         }
 
