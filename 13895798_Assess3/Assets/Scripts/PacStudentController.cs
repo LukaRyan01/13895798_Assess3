@@ -44,18 +44,21 @@ public class PacStudentController : MonoBehaviour
         {
             walkingSound.Stop();
             eatingSound.Stop();
-            
+            kirby.GetComponentInChildren<ParticleSystem>().Stop();
+
             if (lastInput == KeyCode.W)
             {
                 KirbyNewPos = kirby.transform.position + new Vector3(0.0f, 1.0f, 0.0f);
                 if (TileMap.GetTile(Vector3Int.FloorToInt(KirbyNewPos + new Vector3(-4.5f, -1.5f, 0.0f))) == null)
                 {
+                    kirby.GetComponentInChildren<ParticleSystem>().Play();
                     AnimationController.SetTrigger("UpParam");
                     tweener.AddTween(kirby.transform, kirby.transform.position, KirbyNewPos, 1.0f);
                     walkingSound.Play();
                 }
                 else if (TileMap.GetTile(Vector3Int.FloorToInt(KirbyNewPos + new Vector3(-4.5f, -1.5f, 0.0f))).name == "Normal Pellet Simple Tile")
                 {
+                    kirby.GetComponentInChildren<ParticleSystem>().Play();
                     AnimationController.SetTrigger("UpParam");
                     tweener.AddTween(kirby.transform, kirby.transform.position, KirbyNewPos, 1.0f);
                     eatingSound.Play();
@@ -79,12 +82,14 @@ public class PacStudentController : MonoBehaviour
                         AnimationController.SetTrigger("LeftParam");
                         tweener.AddTween(kirby.transform, kirby.transform.position, KirbyNewPos, 1.0f);
                         walkingSound.Play();
+                        kirby.GetComponentInChildren<ParticleSystem>().Play();
                     }
                     else if (TileMap.GetTile(Vector3Int.FloorToInt(KirbyNewPos + new Vector3(-4.5f, -1.5f, 0.0f))).name == "Normal Pellet Simple Tile")
                     {
                         AnimationController.SetTrigger("LeftParam");
                         tweener.AddTween(kirby.transform, kirby.transform.position, (kirby.transform.position + new Vector3(-1.0f, 0.0f, 0.0f)), 1.0f);
                         eatingSound.Play();
+                        kirby.GetComponentInChildren<ParticleSystem>().Play();
                     }
                 }
             }
@@ -96,11 +101,13 @@ public class PacStudentController : MonoBehaviour
                 {
                     tweener.AddTween(kirby.transform, kirby.transform.position, KirbyNewPos, 1.0f);
                     walkingSound.Play();
+                    kirby.GetComponentInChildren<ParticleSystem>().Play();
                 }
                 else if (TileMap.GetTile(Vector3Int.FloorToInt(KirbyNewPos + new Vector3(-4.5f, -1.5f, 0.0f))).name == "Normal Pellet Simple Tile")
                 {
                     tweener.AddTween(kirby.transform, kirby.transform.position, (kirby.transform.position + new Vector3(0.0f, -1.0f, 0.0f)), 1.0f);
                     eatingSound.Play();
+                    kirby.GetComponentInChildren<ParticleSystem>().Play();
                 }
             }
             if (lastInput == KeyCode.D)
@@ -120,12 +127,14 @@ public class PacStudentController : MonoBehaviour
                         AnimationController.SetTrigger("RightParam");
                         tweener.AddTween(kirby.transform, kirby.transform.position, KirbyNewPos, 1.0f);
                         walkingSound.Play();
+                        kirby.GetComponentInChildren<ParticleSystem>().Play();
                     }
                     else if (TileMap.GetTile(Vector3Int.FloorToInt(KirbyNewPos + new Vector3(-4.5f, -1.5f, 0.0f))).name == "Normal Pellet Simple Tile")
                     {
                         AnimationController.SetTrigger("RightParam");
                         tweener.AddTween(kirby.transform, kirby.transform.position, (kirby.transform.position + new Vector3(1.0f, 0.0f, 0.0f)), 1.0f);
                         eatingSound.Play();
+                        kirby.GetComponentInChildren<ParticleSystem>().Play();
                     }
                 }
             }
