@@ -12,6 +12,8 @@ public class PacStudentController : MonoBehaviour
     private Vector3 KirbyNewPos;
     public Tilemap TileMap;
     public Animator AnimationController;
+    public AudioSource walkingSound;
+    public AudioSource eatingSound;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +42,8 @@ public class PacStudentController : MonoBehaviour
         }
         if (!(tweener.TweenExists(kirby.transform)))
         {
+            walkingSound.Stop();
+            eatingSound.Stop();
             
             if (lastInput == KeyCode.W)
             {
@@ -48,54 +52,81 @@ public class PacStudentController : MonoBehaviour
                 {
                     AnimationController.SetTrigger("UpParam");
                     tweener.AddTween(kirby.transform, kirby.transform.position, KirbyNewPos, 1.0f);
+                    walkingSound.Play();
                 }
                 else if (TileMap.GetTile(Vector3Int.FloorToInt(KirbyNewPos + new Vector3(-4.5f, -1.5f, 0.0f))).name == "Normal Pellet Simple Tile")
                 {
                     AnimationController.SetTrigger("UpParam");
                     tweener.AddTween(kirby.transform, kirby.transform.position, KirbyNewPos, 1.0f);
+                    eatingSound.Play();
                 }
             }
             if (lastInput == KeyCode.A)
             {
                 KirbyNewPos = kirby.transform.position + new Vector3(-1.0f, 0.0f, 0.0f);
-                if (TileMap.GetTile(Vector3Int.FloorToInt(KirbyNewPos + new Vector3(-4.5f, -1.5f, 0.0f))) == null)
+                if (KirbyNewPos == new Vector3(-11.5f, 0.5f, 0.0f))
                 {
-                    AnimationController.SetTrigger("LeftParam");
-                    tweener.AddTween(kirby.transform, kirby.transform.position, KirbyNewPos, 1.0f);
+                    kirby.transform.position = new Vector3(14.5f, 0.5f, 0.0f);
                 }
-                else if (TileMap.GetTile(Vector3Int.FloorToInt(KirbyNewPos + new Vector3(-4.5f, -1.5f, 0.0f))).name == "Normal Pellet Simple Tile" )
+                else if (KirbyNewPos == new Vector3(15.5f, 0.5f, 0.0f))
                 {
-                    AnimationController.SetTrigger("LeftParam");
-                    tweener.AddTween(kirby.transform, kirby.transform.position, (kirby.transform.position + new Vector3(-1.0f, 0.0f, 0.0f)), 1.0f);
-               }
+                    kirby.transform.position = new Vector3(-11.5f, 0.5f, 0.0f);
+                }
+                else
+                {
+                    if (TileMap.GetTile(Vector3Int.FloorToInt(KirbyNewPos + new Vector3(-4.5f, -1.5f, 0.0f))) == null)
+                    {
+                        AnimationController.SetTrigger("LeftParam");
+                        tweener.AddTween(kirby.transform, kirby.transform.position, KirbyNewPos, 1.0f);
+                        walkingSound.Play();
+                    }
+                    else if (TileMap.GetTile(Vector3Int.FloorToInt(KirbyNewPos + new Vector3(-4.5f, -1.5f, 0.0f))).name == "Normal Pellet Simple Tile")
+                    {
+                        AnimationController.SetTrigger("LeftParam");
+                        tweener.AddTween(kirby.transform, kirby.transform.position, (kirby.transform.position + new Vector3(-1.0f, 0.0f, 0.0f)), 1.0f);
+                        eatingSound.Play();
+                    }
+                }
             }
             if (lastInput == KeyCode.S)
             {
-
+                AnimationController.SetTrigger("DownParam");
                 KirbyNewPos = kirby.transform.position + new Vector3(0.0f, -1.0f, 0.0f);
                 if (TileMap.GetTile(Vector3Int.FloorToInt(KirbyNewPos + new Vector3(-4.5f, -1.5f, 0.0f))) == null)
                 {
-                    AnimationController.SetTrigger("DownParam");
                     tweener.AddTween(kirby.transform, kirby.transform.position, KirbyNewPos, 1.0f);
+                    walkingSound.Play();
                 }
                 else if (TileMap.GetTile(Vector3Int.FloorToInt(KirbyNewPos + new Vector3(-4.5f, -1.5f, 0.0f))).name == "Normal Pellet Simple Tile")
                 {
-                    AnimationController.SetTrigger("DownParam");
                     tweener.AddTween(kirby.transform, kirby.transform.position, (kirby.transform.position + new Vector3(0.0f, -1.0f, 0.0f)), 1.0f);
+                    eatingSound.Play();
                 }
             }
             if (lastInput == KeyCode.D)
             {
                 KirbyNewPos = kirby.transform.position + new Vector3(1.0f, 0.0f, 0.0f);
-                if (TileMap.GetTile(Vector3Int.FloorToInt(KirbyNewPos + new Vector3(-4.5f, -1.5f, 0.0f))) == null)
+                if (KirbyNewPos == new Vector3(-11.5f, 0.5f, 0.0f))
                 {
-                    AnimationController.SetTrigger("RightParam");
-                    tweener.AddTween(kirby.transform, kirby.transform.position, KirbyNewPos, 1.0f);
+                    kirby.transform.position = new Vector3(14.5f, 0.5f, 0.0f);
                 }
-                else if (TileMap.GetTile(Vector3Int.FloorToInt(KirbyNewPos + new Vector3(-4.5f, -1.5f, 0.0f))).name == "Normal Pellet Simple Tile")
+                else if (KirbyNewPos == new Vector3(15.5f, 0.5f, 0.0f)) {                 
+                    kirby.transform.position = new Vector3(-11.5f, 0.5f, 0.0f);
+                }   
+                else
                 {
-                    AnimationController.SetTrigger("RightParam");
-                    tweener.AddTween(kirby.transform, kirby.transform.position, (kirby.transform.position + new Vector3(1.0f, 0.0f, 0.0f)), 1.0f);
+                    if (TileMap.GetTile(Vector3Int.FloorToInt(KirbyNewPos + new Vector3(-4.5f, -1.5f, 0.0f))) == null)
+                    {
+                        AnimationController.SetTrigger("RightParam");
+                        tweener.AddTween(kirby.transform, kirby.transform.position, KirbyNewPos, 1.0f);
+                        walkingSound.Play();
+                    }
+                    else if (TileMap.GetTile(Vector3Int.FloorToInt(KirbyNewPos + new Vector3(-4.5f, -1.5f, 0.0f))).name == "Normal Pellet Simple Tile")
+                    {
+                        AnimationController.SetTrigger("RightParam");
+                        tweener.AddTween(kirby.transform, kirby.transform.position, (kirby.transform.position + new Vector3(1.0f, 0.0f, 0.0f)), 1.0f);
+                        eatingSound.Play();
+                    }
                 }
             }
         }
